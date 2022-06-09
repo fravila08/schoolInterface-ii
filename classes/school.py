@@ -16,3 +16,13 @@ class School:
         for student in self.students:
             if student.school_id == student_id:
                 return student
+            
+    def add_student(self, student):
+        self.students.append(Student(**student))
+
+    def delete_student(self,student):
+        validation=input('Plese enter the student Password')
+        if validation == student.password:
+            self.students.remove(student)
+        else:
+            raise(f'This is an incorrect password')
